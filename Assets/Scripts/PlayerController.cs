@@ -18,6 +18,10 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        bool wasHitNorth = Physics.Raycast(transform.position, new Vector3(0, 0, -1), 2);
+        Color rayColor = (wasHitNorth) ? Color.red : Color.blue; 
+        Debug.DrawRay(transform.position, new Vector3(0, 0, -2), rayColor, 1f);
+
         if (Input.GetKeyDown(KeyCode.S) && isMoving == false)
         {
             playerRB.AddForce(Vector3.forward * speed, ForceMode.Impulse);
