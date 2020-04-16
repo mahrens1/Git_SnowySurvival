@@ -20,10 +20,11 @@ public class PlayerController : MonoBehaviour
     {
         bool wasHitNorth = Physics.Raycast(transform.position, new Vector3(0, 0, -1), 2);
         bool wasHitEast = Physics.Raycast(transform.position, new Vector3(-1, 0, 0), 2);
-        bool wasHitWest = Physics.Raycast(transform.position, new Vector3(1, 0, -1), 2);
+        bool wasHitWest = Physics.Raycast(transform.position, new Vector3(1, 0, 0), 2);
         bool wasHitSouth = Physics.Raycast(transform.position, new Vector3(0, 0, 1), 2);
-        Color rayColor = (wasHitNorth) ? Color.red : Color.blue; 
-        Debug.DrawRay(transform.position, new Vector3(0, 0, -2), rayColor, 1f);
+
+        //Color rayColor = (wasHitNorth) ? Color.red : Color.blue; 
+        //Debug.DrawRay(transform.position, new Vector3(0, 0, -2), rayColor, 1f);
 
         if (Input.GetKeyDown(KeyCode.S) && wasHitSouth == false)
         {
