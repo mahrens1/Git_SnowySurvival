@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
+    private Animator playerAnim;
     private Rigidbody playerRB;
     public float speed;
     private bool isMoving = false;
@@ -13,6 +14,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         playerRB = GetComponent<Rigidbody>();
+        playerAnim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -29,6 +31,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.S) && wasHitSouth == false)
         {
             playerRB.AddForce(Vector3.forward * speed, ForceMode.Impulse);
+            playerAnim.SetTrigger("running");
             isMoving = true;
         }
         else if(Input.GetKeyDown(KeyCode.A) && wasHitWest == false)
