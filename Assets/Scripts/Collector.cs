@@ -29,7 +29,7 @@ public class Collector : MonoBehaviour
         }
         if (other.gameObject.CompareTag("HomeBase") && hasCollectable == true)
         {
-            SceneManager.LoadScene("MainMenu");
+            SceneManager.LoadScene("Level2");
         }
         
     }
