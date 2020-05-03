@@ -20,6 +20,11 @@ public class ObjectSpawner : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Invoke("SpawnFallingRock", 1.0f);
+    }
+
+    private void SpawnFallingRock()
+    {
         Instantiate(fallingRockPrefab, new Vector3(12, 0, 2), Quaternion.identity);
     }
 }
