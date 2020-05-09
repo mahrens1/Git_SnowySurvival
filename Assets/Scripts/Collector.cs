@@ -9,6 +9,7 @@ public class Collector : MonoBehaviour
     Scene currentScene;
     string sceneName;
 
+
     void Start()
     {
         //Getting the current scene
@@ -17,10 +18,12 @@ public class Collector : MonoBehaviour
         sceneName = currentScene.name;
     }
 
+
     void Update()
     {
 
     }
+
 
     private void OnTriggerEnter(Collider other)
     {
