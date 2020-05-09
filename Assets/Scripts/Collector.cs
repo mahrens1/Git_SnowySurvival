@@ -6,31 +6,40 @@ using UnityEngine.SceneManagement;
 public class Collector : MonoBehaviour
 {
     public bool hasCollectable = false;
+    Scene currentScene;
+    string sceneName;
 
-    // Start is called before the first frame update
     void Start()
     {
-        
+        //Getting the current scene
+        //Taking the name of the current scene and saving its name
+        Scene currentScene = SceneManager.GetActiveScene();
+        sceneName = currentScene.name;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void OnTriggerEnter(Collider other)
     {
-
+        //Player grabbing the wood
         if (other.gameObject.CompareTag("Wood"))
         {
             Destroy(other.gameObject);
             hasCollectable = true;
         }
-        if (other.gameObject.CompareTag("HomeBase") && hasCollectable == true)
+
+        //Scene changers
+        if (other.gameObject.CompareTag("HomeBase") && hasCollectable == true && sceneName == "Tutorial")
         {
             SceneManager.LoadScene("Level2");
         }
-        
+        if (other.gameObject.CompareTag("HomeBase") && hasCollectable == true && sceneName == "Level2")
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
+
     }
 }
