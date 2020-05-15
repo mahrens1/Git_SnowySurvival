@@ -7,7 +7,7 @@ public class DisplayCautionText : MonoBehaviour
 {
 
     [SerializeField] GameObject cautionCanvas;
-    private float waitTime = 10f;
+    private float waitTime = 5f;
     Scene currentScene;
     string currentSceneName;
     // Start is called before the first frame update
