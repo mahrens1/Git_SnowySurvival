@@ -47,6 +47,10 @@ public class Collector : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("HomeBase") && hasCollectable == true && sceneName == "Level2")
         {
+            SceneManager.LoadScene("Level3");
+        }
+        if (collision.gameObject.CompareTag("HomeBase") && hasCollectable == true && sceneName == "Level3")
+        {
             SceneManager.LoadScene("MainMenu");
         } 
     }
