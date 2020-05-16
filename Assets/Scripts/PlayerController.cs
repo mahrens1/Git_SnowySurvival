@@ -7,11 +7,13 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody playerRB;
     public float speed;
+    private Animator playerAnim;
 
 
     void Start()
     {
         playerRB = GetComponent<Rigidbody>();
+        playerAnim = GetComponent<Animator>();
     }
 
 
@@ -29,6 +31,7 @@ public class PlayerController : MonoBehaviour
         //Character controls
         if (Input.GetKeyDown(KeyCode.S) && wasHitSouth == false)
         {
+            playerAnim.Play("walking");
             playerRB.AddForce(Vector3.forward * speed, ForceMode.Impulse);
             transform.rotation = Quaternion.Euler(0, 0, 0);
         }
