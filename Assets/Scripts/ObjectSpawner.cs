@@ -25,6 +25,6 @@ public class ObjectSpawner : MonoBehaviour
 
     private void SpawnFallingRock()
     {
-        Instantiate(fallingRockPrefab, new Vector3(12, 0, 2), Quaternion.identity);
+        Instantiate(fallingRockPrefab, new Vector3(12, 0, 225), Quaternion.identity);
     }
 }

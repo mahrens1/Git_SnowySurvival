@@ -25,13 +25,10 @@ public class PlayerController : MonoBehaviour
         bool wasHitWest = Physics.Raycast(transform.position, new Vector3(1, 0, 0), 2);
         bool wasHitSouth = Physics.Raycast(transform.position, new Vector3(0, 0, 1), 2);
 
-        //Color rayColor = (wasHitNorth) ? Color.red : Color.blue; 
-        //Debug.DrawRay(transform.position, new Vector3(0, 0, -2), rayColor, 1f);
 
         //Character controls
         if (Input.GetKeyDown(KeyCode.S) && wasHitSouth == false)
         {
-            playerAnim.Play("walking");
             playerRB.AddForce(Vector3.forward * speed, ForceMode.Impulse);
             transform.rotation = Quaternion.Euler(0, 0, 0);
         }
@@ -50,6 +47,7 @@ public class PlayerController : MonoBehaviour
             playerRB.AddForce(Vector3.left * speed, ForceMode.Impulse);
             transform.rotation = Quaternion.Euler(0, -90, 0);
         }
+
 
         //Escape button
         if (Input.GetKeyDown(KeyCode.Escape))
